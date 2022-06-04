@@ -5,16 +5,16 @@ const Blog = ({ blogs }) => {
   return (
     <div>
       <h1>ブログページ</h1>
-      {blogs.map((blog, index) => {
-        console.log(blog);
+      {blogs.map((blog, index) => (
         <div key={index}>
           <h3>{blog.frontmatter.title}</h3>
           <p>{blog.frontmatter.date}</p>
+          {console.log(blog.frontmatter.title)}
           <Link href={`/blog/${blog.slug}`}>
             <a>Read More</a>
           </Link>
-        </div>;
-      })}
+        </div>
+      ))}
     </div>
   );
 };
